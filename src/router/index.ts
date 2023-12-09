@@ -1,7 +1,6 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
-import {BASE} from '../utils/constants'
 
 const Posts = () => import('../views/Posts.vue')
 const Albums = () => import('../views/Albums.vue')
@@ -13,7 +12,7 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: BASE,
+    path: '/',
     component: Home,
     name: "Home"
   },
