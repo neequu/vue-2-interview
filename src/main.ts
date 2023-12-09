@@ -3,8 +3,7 @@ import App from './App.vue'
 import router from './router'
 import './style.scss'
 
-// Create Vue app
-new Vue({
+// @ts-ignore not compatble with ts
+new Vue({router,
   render: h => h(App),
-  router,
 }).$mount('#app')
