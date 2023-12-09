@@ -1,5 +1,6 @@
 import { getCurrentInstance } from 'vue'
 
+export const BASE = '/vue-2-interview/'
 export const USERS_API_URL = 'https://jsonplaceholder.typicode.com/users'
 export const POSTS_API_URL = 'https://jsonplaceholder.typicode.com/posts'
 export const ALBUMS_API_URL = 'https://jsonplaceholder.typicode.com/albums'
