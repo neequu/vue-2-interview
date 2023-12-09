@@ -1,4 +1,4 @@
-import{d as ht,n as pt,r as vt,o as mt,a as yt,b as bt}from"./index-l6CnYFV3.js";var gt={exports:{}};/*!
+import{d as ht,n as pt,r as vt,o as mt,a as yt,b as bt}from"./index-6Zt8-PR8.js";var gt={exports:{}};/*!
  * vue-carousel v0.18.0-alpha
  * (c) 2019 todd.beauchamp@ssense.com
  * https://github.com/ssense/vue-carousel#readme
