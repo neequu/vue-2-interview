@@ -1,11 +1,11 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../pages/Home.vue";
+import Home from "../views/Home.vue";
 
-const Posts = () => import('../pages/Posts.vue')
-const Albums = () => import('../pages/Albums.vue')
-const User = () => import('../pages/User.vue')
-const NewPost = () => import('../pages/NewPost.vue')
+const Posts = () => import('../views/Posts.vue')
+const Albums = () => import('../views/Albums.vue')
+const User = () => import('../views/User.vue')
+const NewPost = () => import('../views/NewPost.vue')
 
 Vue.use(VueRouter);
 

@@ -1,18 +1,56 @@
-# Vue 3 + TypeScript + Vite
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+# Interview Project for (СВЦ ПОЛИС)[polis812.ru] User | Albums
 
-## Recommended IDE Setup
+## Описание
+Этот проект представляет собой приложение на Vue.js, построенное на 2.7 версии, TypeScript, Axios, Vite и SCSS. Он служит демонстрацией моих навыков и знаний в области фронтенд-разработки с использованием современных инструментов и технологий.
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Оглавление
+Описание
+Оглавление
+Установка
+Использование
+Функционал
+Структура папок
+Используемые технологии
+Содействие
+Лицензия
+Контакты
 
-## Type Support For `.vue` Imports in TS
+## Функционал
+- Home страница со списком пользователей
+- User страница с альбомами и постами
+- Возможность перейти только на одну категорию: посты или альбомы
+- Кеширование запросов
+...
+## Структура папок
+/
+|-- src/
+|   |-- assets/
+|   |-- components/
+|   |-- composables/
+|   |-- router/
+|   |-- utils/
+|   |-- views/
+|   |-- App.vue
+|   |-- main.ts
+|   |-- style.scss
+|-- .gitignore
+|-- public/
+|-- package.json
+|-- pnpm-lock.yaml
+|-- README.md
+|-- tsconfig.json
+|-- tsconfig.node.json
+|-- types.ts
+|-- vite.config.ts
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+## Используемые технологии
+- Vue.js 2.7
+- TypeScript
+- Vite
+- SCSS
+- LRU Cache + ohash
+- Vue router
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
 
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+Если у вас есть вопросы или вы хотите связаться со мной, вы можете написать на nist1701gmail.com
