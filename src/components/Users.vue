@@ -69,6 +69,8 @@ onMounted(async () => {
       white-space: nowrap;
       overflow: hidden;
       width: 30ch;
+      display: inline-block;
+      margin-bottom: 0.15rem;
     }
 
     // style values
@@ -78,14 +80,11 @@ onMounted(async () => {
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
-      display: block;
       width: 30ch;
+      display: inline-block;
     }
 
     @media (min-width:600px) {
-      flex-flow: row;
-      align-items: flex-center;
-      justify-content: space-between;
 
       span.value,
       span.label {
