@@ -6,10 +6,18 @@ import { onMounted, ref } from 'vue';
 // userId from the url param
 const props = defineProps<{ userId: string }>()
 const posts = ref<Post[]>([])
+const isLoading = ref(false)
 // get user posts on page load
 onMounted(async () => {
-  const { data: postsData } = await getPostsByUserId(props.userId)
-  posts.value = postsData
+  isLoading.value = true
+  try {
+    const { data: postsData } = await getPostsByUserId(props.userId)
+    posts.value = postsData
+  } catch (e) {
+    console.log(e)
+  } finally {
+    isLoading.value = false
+  }
 })
 </script>
 
@@ -25,7 +33,7 @@ onMounted(async () => {
         </div>
       </div>
     </div>
-    <div v-else class="loading">
+    <div v-else-if="isLoading" class="loading">
       loading...
     </div>
   </section>

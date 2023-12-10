@@ -7,7 +7,7 @@ const route = useRoute()
 <template>
   <div class="page">
     <TheHeader />
-    <main>
+    <main class="main">
       <transition name="slide-fade" mode="out-in">
         <router-view :key="route.path" />
       </transition>
@@ -28,5 +28,9 @@ const route = useRoute()
 .slide-fade-leave-to {
   transform: translateX(20px);
   opacity: 0;
+}
+
+.main {
+  padding-bottom: 1rem;
 }
 </style>

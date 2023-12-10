@@ -7,17 +7,12 @@ defineProps<{ albums: AlbumPhotos[][] }>()
 
 <template>
   <div>
-    <div v-if="albums.length">
-      <div v-for="(al, idx) in albums" :key="idx" class="album">
-        <carousel :mouse-drag="true" autoplay :perPageCustom="[[320, 1], [640, 2], [1024, 3]]" class="album-carousel">
-          <slide v-for="photo in al" :key="photo.id">
-            <img :src="photo.url">
-          </slide>
-        </carousel>
-      </div>
-    </div>
-    <div v-else class="loading">
-      loading...
+    <div v-for="(al, idx) in albums" :key="idx" class="album">
+      <carousel :mouse-drag="true" autoplay :perPageCustom="[[320, 1], [640, 2], [1024, 3]]" class="album-carousel">
+        <slide v-for="photo in al" :key="photo.id">
+          <img :src="photo.url">
+        </slide>
+      </carousel>
     </div>
   </div>
 </template>

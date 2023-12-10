@@ -4,10 +4,18 @@ import { getUsers } from '../composables/jsonplaceholder'
 import type { User } from '../../types'
 
 const users = ref<User[]>([])
+const isLoading = ref(false)
 // get user data on page load
 onMounted(async () => {
-  const { data: userData } = await getUsers()
-  users.value = userData
+  isLoading.value = true
+  try {
+    const { data: userData } = await getUsers()
+    users.value = userData
+  } catch (e) {
+    console.log(e)
+  } finally {
+    isLoading.value = false
+  }
 })
 </script>
 
@@ -18,7 +26,11 @@ onMounted(async () => {
         <div>
           <div class="user-details">
             <span class="label">Name:</span>
-            <router-link :to="`/users/${user.id}`"><span class="value">{{ user.name }}</span></router-link>
+            <router-link :to="`/users/${user.id}`" class="user-link">
+              <span class="value">
+                {{ user.name }}
+              </span>
+            </router-link>
           </div>
           <div class="user-details">
             <span class="label">Username:</span>
@@ -35,7 +47,7 @@ onMounted(async () => {
         </div>
       </article>
     </div>
-    <div v-else class="loading">
+    <div v-else-if="isLoading" class="loading">
       loading...
     </div>
   </div>
@@ -75,9 +87,8 @@ onMounted(async () => {
 
     // style values
     span.value {
-      color: #6c757d;
-      transition: color 250ms ease;
       text-overflow: ellipsis;
+      color: #8e9671;
       white-space: nowrap;
       overflow: hidden;
       width: 30ch;
@@ -104,11 +115,15 @@ onMounted(async () => {
     justify-content: flex-end;
   }
 
-  a {
+  .user-link {
+    color: inherit;
     text-decoration: none;
+    border-bottom: 1px solid #555;
+    display: inline-flex;
+    transition: border-color 250ms;
 
-    &:hover span.value {
-      color: $text-color;
+    &:hover {
+      border-color: $text-color;
     }
   }
 
@@ -117,6 +132,7 @@ onMounted(async () => {
     background-color: #5a455a;
     color: $text-color;
     padding: 0.75rem 1rem;
+    text-decoration: none;
     font-weight: 700;
     border: none;
     border-radius: 0.5rem;
