@@ -6,7 +6,6 @@ const Posts = () => import('../views/Posts.vue')
 const Albums = () => import('../views/Albums.vue')
 const User = () => import('../views/User.vue')
 const NewPost = () => import('../views/NewPost.vue')
-const PageNotFound = () => import('../views/PageNotFound.vue')
 
 Vue.use(VueRouter);
 
@@ -38,8 +37,7 @@ const routes = [
   },
   { 
     path: "*", 
-    name: 'Not Found', 
-    component: PageNotFound 
+    redirect:  '/'
 }
 ];
 
